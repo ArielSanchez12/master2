@@ -2,7 +2,7 @@ import {Routes} from '@angular/router';
 
 export const routes:Routes = [
   {
-    path: '',
+    path: '', //Cuando se abra la aplicacion se va primero a esta ruta vacia, luego se redirige a home
     redirectTo: 'home',
     pathMatch: 'full' //Para que la ruta se muestre completa, hay paginas que enmascaran sus rutas para que no salga el ID, el token, etc
   },

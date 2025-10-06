@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
   styleUrls: ['./info.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, IonicModule]
 })
-export class InfoPage implements OnInit {
+export class InfoPage {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router: Router) {}
+  goToDetails() {
+    this.router.navigate(['/details']);
   }
-
+  goBackHome() {
+    this.router.navigate(['/home']);
+  }
+  
 }

@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CommonModule],
   standalone: true,
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  imports: [IonicModule, CommonModule]
 })
 export class HomePage {
   constructor(private router: Router) {}
+
   goToDetails() {
     this.router.navigate(['/details']);
+  }
+  goToInfo() {
+    this.router.navigate(['/info']);
   }
 }
