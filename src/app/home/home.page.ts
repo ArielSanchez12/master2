@@ -7,8 +7,12 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CommonModule],
+  standalone: true,
 })
 export class HomePage {
-  constructor() {}
+  constructor(private router: Router) {}
+  goToDetails() {
+    this.router.navigate(['/details']);
+  }
 }
