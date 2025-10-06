@@ -1,13 +1,24 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 
-export const routes: Routes = [
-  {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-  },
+export const routes:Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full',
+    pathMatch: 'full' //Para que la ruta se muestre completa, hay paginas que enmascaran sus rutas para que no salga el ID, el token, etc
   },
-];
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./home/home.page').then((m) => m.HomePage)
+  },
+  {
+    path: 'details',
+    loadComponent: () =>
+      import('./details/details.page').then((m) => m.DetailsPage)
+  },
+  {
+    path: 'info',
+    loadComponent: () =>
+      import('./info/info.page').then((m) => m.InfoPage)
+  }
+]
